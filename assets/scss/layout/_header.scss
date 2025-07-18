@@ -1,0 +1,7 @@
+@use "../utils/index" as *;
+body:not([data-page="index"]) .index-only-nav {
+  display: none;
+  @include respond-to(md) {
+    display: block;
+  }
+}

@@ -1,7 +1,7 @@
 <header>
   <div class="container">
-    <div class="d-flex flex-wrap align-items-center pb-md-4 pt-md-4">
-      <div class="order-first pt-3 pb-4 pt-md-0 pb-md-0">
+    <div class="d-flex flex-wrap align-items-center">
+      <div class="order-first pt-md-0 pb-md-0 pb-md-4 pt-md-4 pb-3 pt-3">
         <a href="index.html"
           ><img src="../assets/images/logo.svg" alt="logo"
         /></a>
@@ -9,8 +9,7 @@
       <div class="ms-auto order-1 order-md-last">
         <a href="login.html" class="p-3"><i class="bi bi-person icon"></i></a>
       </div>
-
-      <nav class="order-2 w-full w-md-auto ms-md-12">
+      <nav class="order-2 w-full w-md-auto ms-md-12 index-only-nav">
         <ul class="d-flex align-items-center mx-negative-3 ms-md-0 me-md-0">
           <li class="w-full text-center me-md-10">
             <a
@@ -31,3 +30,9 @@
     </div>
   </div>
 </header>
+<style>
+  /* 確保只在 index 頁面顯示 */
+  /* [data-page="index"] .index-only-nav {
+    display: block;
+  } */
+</style>

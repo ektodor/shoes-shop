@@ -22,8 +22,12 @@
 @use "./components/image";
 @use "./components/pagination";
 
+// layout
+@use "./layout/header";
+
 // 頁面
 @use "./pages/index";
 @use "./pages/product-detail";
 @use "./pages/story";
 @use "./pages/login";
+@use "./pages/collect";
