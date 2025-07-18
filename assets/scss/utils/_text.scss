@@ -1,0 +1,52 @@
+@use "../utils/index" as *;
+@use "sass:map";
+// text-primary text-secondary ...
+@each $name, $color in $text-colors {
+  .text-#{$name} {
+    color: $color;
+  }
+}
+
+@each $name, $weight in $font-weights {
+  .fw-#{$name} {
+    font-weight: $weight;
+  }
+}
+
+@each $name, $size in $font-sizes {
+  .fs-#{$name} {
+    font-size: $size;
+  }
+}
+
+@each $name, $size in $line-heights {
+  .lh-#{$name} {
+    line-height: $size;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+@each $breakpoint, $size in $breakpoints {
+  @include respond-to($breakpoint) {
+    @each $name, $color in $text-colors {
+      .text-#{$breakpoint}-#{$name} {
+        color: $color;
+      }
+    }
+
+    @each $name, $weight in $font-weights {
+      .fw-#{$breakpoint}-#{$name} {
+        font-weight: $weight;
+      }
+    }
+
+    @each $name, $size in $font-sizes {
+      .fs-#{$breakpoint}-#{$name} {
+        font-size: $size;
+      }
+    }
+  }
+}

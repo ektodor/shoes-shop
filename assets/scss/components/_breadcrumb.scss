@@ -1,0 +1,25 @@
+@use "../utils/index" as *;
+@use "sass:map";
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  &-item {
+    display: flex;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.05rm;
+    a {
+      color: get-text-color(secondary);
+    }
+    &:not(:last-child)::after {
+      color: get-text-color(secondary);
+      content: "/";
+      font-weight: 500;
+      margin: 0 1.2rem;
+    }
+    &.active a {
+      pointer-events: none;
+      color: get-text-color(primary);
+    }
+  }
+}

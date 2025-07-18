@@ -1,0 +1,24 @@
+@use "../utils/index" as *;
+@use "sass:map";
+.nav-decorate {
+  &.active a {
+    color: map.get($map: $primary-colors, $key: 400);
+    pointer-events: none;
+  }
+  &:not(.active):hover a {
+    color: map.get($map: $primary-colors, $key: 400);
+  }
+}
+
+.del-decorate {
+  text-decoration: line-through;
+}
+
+.link-decorate {
+  border-bottom: 1px solid transparent;
+  &:hover {
+    border-bottom: 1px solid #212529;
+    transition: 0.3s;
+    transform: scale(1.05);
+  }
+}

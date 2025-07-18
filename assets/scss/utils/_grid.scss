@@ -1,0 +1,77 @@
+@use "../utils/index" as *;
+@use "sass:map";
+
+.container {
+  max-width: 1344px; // 加上左右padding 1296+24+24=1344
+  margin: 0 auto;
+  padding-right: $grid-gutter;
+  padding-left: $grid-gutter;
+}
+
+.row {
+  display: flex;
+  margin-right: calc($grid-gutter/2 * -1);
+  margin-left: calc($grid-gutter/2 * -1);
+}
+
+.col {
+  width: 100%;
+  padding-right: calc($grid-gutter/2);
+  padding-left: calc($grid-gutter/2);
+}
+
+.w-full {
+  width: 100%;
+}
+
+.d-none {
+  display: none;
+}
+
+// 生成欄位寬度類別
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    @extend .col;
+    @include make-col($i);
+  }
+}
+
+@each $breakpoint, $size in $breakpoints {
+  $current-gutter: if($size >= map.get($breakpoints, md), 2.4rem, $grid-gutter);
+
+  // @debug $current-gutter;
+  @include respond-to($breakpoint) {
+    .container {
+      padding-right: $current-gutter;
+      padding-left: $current-gutter;
+    }
+    .row {
+      margin-right: calc($current-gutter/-2);
+      margin-left: calc($current-gutter/-2);
+    }
+    .row-#{$breakpoint} {
+      display: flex;
+      margin-right: calc($current-gutter/-2);
+      margin-left: calc($current-gutter/-2);
+    }
+    @for $i from 1 through $grid-columns {
+      .col-#{$breakpoint}-#{$i} {
+        width: 100%;
+        padding-right: calc($current-gutter/2);
+        padding-left: calc($current-gutter/2);
+        @include make-col($i);
+      }
+    }
+    .w-#{$breakpoint}-auto {
+      width: auto;
+    }
+    // @debug w-#{$breakpoint}-full;
+    .w-#{$breakpoint}-full {
+      width: 100%;
+    }
+
+    .d-#{$breakpoint}-none {
+      display: none;
+    }
+  }
+}

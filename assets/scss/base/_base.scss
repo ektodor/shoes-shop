@@ -1,0 +1,25 @@
+@use "../utils/index" as *;
+@use "sass:map";
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: get-text-color(primary);
+  display: inline-block;
+}
+
+// p,
+// li,
+// button,
+// a {
+
+// }
+
+img {
+  max-width: 100%;
+  display: block;
+}

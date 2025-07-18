@@ -1,0 +1,63 @@
+@use "../utils/index" as *;
+@use "sass:map";
+.btn {
+  border-radius: 0.4rem;
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.005em;
+  display: flex;
+  align-items: center;
+  font-weight: map.get($map: $font-weights, $key: "medium");
+  &-lg {
+    padding: 1.2rem 2.4rem;
+  }
+  &-sm {
+    padding: 0.8rem 1.6rem;
+  }
+  &-primary {
+    background-color: get-primary-color(300);
+    color: get-text-color(primary);
+    &:hover {
+      opacity: 90%;
+    }
+    &:focus {
+      box-shadow: 0px 0px 0px 3px
+        rgba($color: get-primary-color(300), $alpha: 0.4);
+    }
+  }
+  &-neutral {
+    background-color: get-neutral-color(900);
+    color: get-text-color(on-dark);
+    &:hover {
+      opacity: 50%;
+    }
+    &:focus {
+      box-shadow: 0px 0px 0px 3px
+        rgba($color: get-neutral-color(900), $alpha: 0.4);
+    }
+  }
+  &-neutral-outlined {
+    border: 1px solid get-neutral-color(900);
+    background-color: get-neutral-color(0);
+    color: get-text-color(primary);
+    &:hover {
+      background-color: get-neutral-color(900);
+      color: get-text-color(on-dark);
+    }
+    &:focus {
+      box-shadow: 0px 0px 0px 3px
+        rgba($color: get-neutral-color(900), $alpha: 0.4);
+    }
+  }
+
+  &-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      background-color: get-neutral-color(900);
+      color: get-text-color(on-dark);
+    }
+  }
+}

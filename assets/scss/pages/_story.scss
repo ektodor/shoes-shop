@@ -1,0 +1,42 @@
+@use "../utils/index" as *;
+.story-header {
+  background-image: url("../images/hero-sm.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba($color: black, $alpha: 0.4);
+  &-content {
+    padding: 8.7rem 0;
+    background-color: rgba($color: black, $alpha: 0.4);
+  }
+  @include respond-to(md) {
+    background-image: url("../images/hero.png");
+    &-content {
+      padding: 15.1rem 0;
+    }
+  }
+}
+
+// 使用 reset 會導致編號標題消失，要使用 padding 推回來才會顯示
+.list-style {
+  list-style: disc;
+  padding-left: 2rem;
+  font-size: 1.6rem;
+  //   padding-left: 4rem;
+}
+
+.idea-decorate {
+  border-left: 3px solid get-neutral-color(300);
+}
+
+.story-link-decorate {
+  text-underline-offset: 0.4rem;
+  display: inline-block;
+  padding: 0.8rem 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.border-bottom-style {
+  border-bottom: 1px solid get-neutral-color(200);
+}

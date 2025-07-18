@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./layout/head'); -%>
+  <body>
+    <%- include('./layout/header'); -%>
+    <main>
+      <div class="container">
+        <div class="row-md pt-md-16 pb-md-16">
+          <div class="col-md-5 mx-negative-3">
+            <img class="d-md-none" src="../assets/images/login-sm.png" />
+            <img class="d-none d-md-flex" src="../assets/images/login.png" />
+          </div>
+          <div
+            class="col-md-7 pt-8 pt-md-0 pb-8 pb-md-0 ps-md-20 pe-md-20 d-md-flex flex-column justify-content-center"
+          >
+            <h4 class="fw-bold fs-xl lh-tight mb-6 mb-md-8 text-center">
+              歡迎！
+            </h4>
+            <div class="d-flex mb-6 mb-md-8">
+              <a href="#" class="login-tab">登入</a>
+              <a href="#" class="login-tab">註冊</a>
+            </div>
+
+            <ul>
+              <li class="mb-2">
+                <a
+                  href="#"
+                  class="d-flex align-items-center border-neutral-300 p-3"
+                  ><img
+                    src="../assets/images/facebook.svg"
+                    alt="facebook"
+                  /><span class="ms-3">Facebook 登入</span></a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="#"
+                  class="d-flex align-items-center border-neutral-300 p-3"
+                  ><img src="../assets/images/apple.svg" alt="apple" /><span
+                    class="ms-3"
+                    >Apple 登入</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="d-flex align-items-center border-neutral-300 p-3"
+                  ><img src="../assets/images/google.svg" alt="google" /><span
+                    class="ms-3"
+                    >Google 登入</span
+                  ></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include('./layout/footer'); -%>
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>

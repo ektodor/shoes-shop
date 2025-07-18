@@ -1,0 +1,159 @@
+@use "sass:map";
+
+// 顏色、字體、間距等全域變數
+
+$font-sizes: (
+  "xs": 1.2rem,
+  "sm": 1.4rem,
+  "md": 1.6rem,
+  "lg": 2rem,
+  "xl": 2.4rem,
+  "2xl": 2.8rem,
+  "3xl": 3.2rem,
+  "4xl": 4rem,
+  "5xl": 4.8rem,
+  "6xl": 5.6rem,
+  "7xl": 6.4rem,
+);
+
+$font-weights: (
+  "thin": 100,
+  "light": 300,
+  "normal": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+  "black": 900,
+);
+
+$line-heights: (
+  tight: 1.2,
+  normal: 1.5,
+);
+
+$font-size-base: 62.5%; // 16px * 62.5% = 10px 不使用直接設定 10px 是防止使用者直接調整瀏覽器字體
+$font-family-base: "Noto Sans TC", sans-serif;
+$font-weight-base: map.get($font-weights, normal);
+$letter-spacing-base: 0.05em; // 沒有提供百分比
+$line-height-base: map.get($line-heights, normal);
+
+$heading-sizes: (
+  // 40
+  h1: map.get($font-sizes, 4xl),
+  // 32
+  h2: map.get($font-sizes, 3xl),
+  // 28
+  h3: map.get($font-sizes, 2xl),
+  // 24
+  h4: map.get($font-sizes, xl),
+  // 20
+  h5: map.get($font-sizes, lg),
+  // 16
+  h6: map.get($font-sizes, md)
+);
+
+$spacing: (
+  0: 0,
+  1: 0.4rem,
+  2: 0.8rem,
+  3: 1.2rem,
+  4: 1.6rem,
+  5: 2rem,
+  6: 2.4rem,
+  8: 3.2rem,
+  10: 4rem,
+  12: 4.8rem,
+  14: 5.6rem,
+  16: 6.4rem,
+  20: 8rem,
+  auto: auto,
+);
+
+// 圓角
+$border-radius: (
+  sm: 0.4rem,
+  md: 1.2rem,
+  full: 9999px,
+);
+
+$primary-colors: (
+  100: #f5fee7,
+  200: #e8fec5,
+  300: #c0fa73,
+  400: #57a203,
+  500: #477a11,
+);
+
+$neutral-colors: (
+  0: #ffffff,
+  100: #f8f9fa,
+  200: #e9ecef,
+  300: #dee2e6,
+  400: #ced4da,
+  500: #adb5bd,
+  600: #6c757d,
+  700: #495057,
+  800: #343a40,
+  900: #212529,
+);
+
+$danger-colors: (
+  100: #fcf1f1,
+  200: #eba7a7,
+  300: #d74f4f,
+);
+
+$success-colors: (
+  100: #eff8f4,
+  200: #9ad1ba,
+  300: #36a375,
+);
+
+$warning-colors: (
+  100: #fef6ec,
+  200: #f9c588,
+  300: #f38b12,
+);
+
+$info-colors: (
+  100: #eef5fc,
+  200: #97c3ed,
+  300: #3087db,
+);
+
+$text-colors: (
+  primary: map.get($neutral-colors, 900),
+  //#212529
+  secondary: map.get($neutral-colors, 600),
+  // #6C757D
+  muted: map.get($neutral-colors, 500),
+  // #ADB5BD
+  highlight: map.get($primary-colors, 400),
+  // #57A203
+  on-dark: map.get($neutral-colors, 0),
+  danger: map.get($danger-colors, 300),
+);
+
+// 格線系統
+$grid-columns: 12;
+$grid-gutter: 1.2rem;
+$breakpoints: (
+  // xs: 0,
+  // sm: 576px,
+  md: 768px,
+  // lg: 992px,
+  // xl: 1200px,
+  // xxl: 1400px,
+);
+
+// 排序
+$order: (
+  first: -1,
+  0: 0,
+  1: 1,
+  2: 2,
+  3: 3,
+  4: 4,
+  5: 5,
+  last: 6,
+);

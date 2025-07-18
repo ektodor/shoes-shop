@@ -1,0 +1,15 @@
+@use "../utils/index" as *;
+.img {
+  &-product-detail {
+    max-width: 100%;
+  }
+  @include respond-to(md) {
+    &-product-detail {
+      max-width: 369px;
+    }
+  }
+
+  &-color-select {
+    width: 64px;
+  }
+}

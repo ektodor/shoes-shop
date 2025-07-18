@@ -1,0 +1,17 @@
+@use "sass:map";
+@use "./variables" as *; // 直接引用同層的 variables
+@function get-font-weight($font-weight) {
+  @return map.get($map: $font-weights, $key: $font-weight);
+}
+
+@function get-text-color($text-color) {
+  @return map.get($map: $text-colors, $key: $text-color);
+}
+
+@function get-primary-color($color) {
+  @return map.get($map: $primary-colors, $key: $color);
+}
+
+@function get-neutral-color($color) {
+  @return map.get($map: $neutral-colors, $key: $color);
+}

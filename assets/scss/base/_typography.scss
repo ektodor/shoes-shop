@@ -1,0 +1,32 @@
+@use "../utils/index" as *;
+@use "sass:map";
+
+html {
+  // 放在 body 使用 rem 會導致使用 16px 相乘，所以放在 html
+  font-size: $font-size-base;
+}
+
+body {
+  font-family: $font-family-base;
+  font-weight: $font-weight-base;
+  letter-spacing: $letter-spacing-base;
+  line-height: $line-height-base;
+}
+
+// 基本字體 h1 h2 h3 ...
+@each $name, $size in $heading-sizes {
+  .fs-#{$name} {
+    font-size: $size;
+    line-height: map.get($line-heights, tight);
+    font-weight: map.get($font-weights, bold);
+  }
+}
+
+p,
+a {
+  font-size: 1.6rem;
+}
+
+a {
+  display: block;
+}

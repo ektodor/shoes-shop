@@ -1,0 +1,28 @@
+@use "../utils/index" as *;
+@use "sass:map";
+// 背景色、邊框色
+@each $name, $value in $primary-colors {
+  .bg-primary-#{$name} {
+    background-color: $value;
+  }
+}
+@each $name, $value in $neutral-colors {
+  .bg-neutral-#{$name} {
+    background-color: $value;
+  }
+}
+
+@each $breakpoint, $size in $breakpoints {
+  @include respond-to($breakpoint) {
+    @each $name, $value in $primary-colors {
+      .bg-primary-#{$breakpoint}-#{$name} {
+        background-color: $value;
+      }
+    }
+    @each $name, $value in $neutral-colors {
+      .bg-neutral-#{$breakpoint}-#{$name} {
+        background-color: $value;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@use "../utils/index" as *;
+@use "sass:map";
+@each $name, $size in $border-radius {
+  .radius-#{$name} {
+    border-radius: $size;
+  }
+}
+
+.border {
+  &-hide {
+    border: none !important;
+  }
+  &-top {
+    border-top: 1px solid map.get($map: $neutral-colors, $key: 300);
+  }
+  &-bottom {
+    border-bottom: 1px solid map.get($map: $neutral-colors, $key: 300);
+  }
+  &-neutral-300 {
+    border: 1px solid get-neutral-color(300);
+  }
+}
+
+@include respond-to(md) {
+  .border-md {
+    border: 1px solid get-neutral-color(900) !important;
+  }
+}
