@@ -1,7 +1,7 @@
 @use "../utils/index" as *;
 .img {
   &-product-detail {
-    max-width: 100%;
+    width: calc(50% - 16px);
   }
   @include respond-to(md) {
     &-product-detail {
@@ -19,4 +19,8 @@
   @include respond-to(md) {
     width: 100%;
   }
+}
+
+.btn-pointer {
+  cursor: pointer;
 }

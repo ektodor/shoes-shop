@@ -24,4 +24,8 @@
   a:has(img) {
     padding: 1rem;
   }
+  .disabled {
+    cursor: none;
+    pointer-events: none;
+  }
 }

@@ -11,6 +11,7 @@ body {
   font-weight: $font-weight-base;
   letter-spacing: $letter-spacing-base;
   line-height: $line-height-base;
+  color: get-text-color(primary);
 }
 
 // 基本字體 h1 h2 h3 ...
